@@ -1,0 +1,11 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: sqlite:///./data/hyperlocal.db
+      JWT_SECRET_KEY: dev-docker-secret-change-me
+      OTP_DEV_FIXED_CODE: "424242"
+    volumes:
+      - ./data:/app/data
